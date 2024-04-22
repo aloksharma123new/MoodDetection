@@ -1,22 +1,29 @@
 <template>
   <!--<img alt="Vue logo" src="./assets/logo.png">-->
   <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
-  <DetectMood/>
+ <div>
+  <ChooseSource/>
+  
+</div>
+  
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
-import DetectMood from './components/DetectMoodNew.vue'
+import ChooseSource from './components/ChooseSource.vue'
+//import DetectMood from './components/DetectMoodNew.vue'
+//import DetectMoodNew from './components/DetectMoodNewCam.vue'
+//import { ref } from 'vue';
+
 
 export default {
   name: 'App',
   components: {
-   // HelloWorld,
-    DetectMood
-  }
+    ChooseSource,
+  },
+  
 }
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
