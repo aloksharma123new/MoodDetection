@@ -17,12 +17,25 @@
         <img id="photo" alt="The screen capture will appear in this box."> 
     </div>
 </div>
+<div>
+    <h3 v-if="joy">&#128512; Joy {{ joy }}</h3>     
+   <h3 v-if="sorrow">&#128542; Sorrow {{ sorrow }}</h3>
+   <h3 v-if="anger">&#128544; Anger {{ anger }}</h3>
+   <h3 v-if="surprise">&#128558; Surprise {{ surprise }}</h3>
+   <h3 v-if="fear"> &#128552; Fear {{ fear }}</h3>
+</div>
   </template>
   <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
 //import { convertColor } from 'naive-ui/es/color-picker/src/utils';
 const fsref = ref('');
+let mood = '';
+let joy = ref('');
+let sorrow = ref('');
+let anger = ref('');
+let surprise = ref('');
+let fear = ref('');
 var data = '';
 var width = 320; // We will scale the photo width to this
         var height = 0; // This will be computed based on the input stream
@@ -117,14 +130,14 @@ axios
  .request(options)
  .then((response) => {
    console.log(response.data);
-   /*mood = response.data
+   mood = response.data
    console.log(mood.google.items[0].emotions);
    joy.value = mood.google.items[0].emotions.joy;
    sorrow.value = mood.google.items[0].emotions.sorrow;
    anger.value = mood.google.items[0].emotions.anger;
    surprise.value = mood.google.items[0].emotions.suprise;
    fear.value = mood.google.items[0].emotions.fear;
-   console.log(joy);*/
+   console.log(joy);
  })
  .catch((error) => {
    console.error(error);
