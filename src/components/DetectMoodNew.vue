@@ -53,13 +53,17 @@ form.append("file", fsref.value);
 form.append("fallback_providers", "");
 
 const options = {
-  method: "POST",
-  url: "https://api.edenai.run/v2/image/face_detection",
-  headers: {
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDEwM2MzMDMtYzJkMS00NzNlLWI5MTQtZGMxOTg1YWEyZDQ3IiwidHlwZSI6ImFwaV90b2tlbiJ9.Ieo7rAMgtICajVYTc3Zvsx0ZiJZmBGmx0GJs5rX0lsk",
-    "Content-Type": "multipart/form-data"
-  },
-  data: form,
+method: "POST",
+  /*url: "https://api.edenai.run/v2/image/face_detection",
+ headers: {
+   Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDEwM2MzMDMtYzJkMS00NzNlLWI5MTQtZGMxOTg1YWEyZDQ3IiwidHlwZSI6ImFwaV90b2tlbiJ9.Ieo7rAMgtICajVYTc3Zvsx0ZiJZmBGmx0GJs5rX0lsk",
+   "Content-Type": "multipart/form-data"
+ },*/
+ url: "http://localhost/5000",
+ headers: {   
+  "Content-Type": "multipart/form-data"
+ },
+ data: form,
 }
 console.log(options);
 axios
